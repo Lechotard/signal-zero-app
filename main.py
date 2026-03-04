@@ -110,7 +110,29 @@ if st.button("📡 Lancer le Scan Mondial des Crises (Temps Réel)", type="prima
                     
                     st.success(f"**💡 Recommandation d'Action :**\n{rapport['recommandation_action']}")
             else:
-                st.success("✅ Océans calmes. Aucune anomalie logistique majeure détectée dans la presse mondiale pour le moment.")
+                # 3. L'envoi avec les nouvelles exigences
+    if rapport['crise_nouvelle_detectee'] and len(rapport['noms_navires_confirmes']) > 0:
+        navires_str = ", ".join(rapport['noms_navires_confirmes'])
+        
+        message = (
+            f"🚨 **NOUVELLE ALERTE MAJEURE CONFIRMÉE : {rapport['titre_alerte']}** 🚨\n"
+            f"🚢 **Navires confirmés :** {navires_str}\n"
+            f"🗞️ **Sources croisées :** {rapport['sources_croisees']} articles concordants\n"
+            f"📝 **Fait validé :** {rapport['resume_incident']}\n\n"
+            f"💡 **Recommandation :** {rapport['recommandation_action']}"
+        )
+        if DISCORD_WEBHOOK:
+            requests.post(DISCORD_WEBHOOK, json={"content": message})
+            print("✅ Alerte vérifiée envoyée sur Discord !")
+    else:
+        # NOUVEAU : LE SIGNAL DE VIE
+        message_calme = "✅ *Scan de routine Signal Zero : Océans calmes, aucune crise majeure détectée ces dernières 24h.*"
+        if DISCORD_WEBHOOK:
+            requests.post(DISCORD_WEBHOOK, json={"content": message_calme})
+        print("✅ Scan terminé. Message de routine envoyé.")
+
+if __name__ == "__main__":
+    run_bot()
 
         except Exception as e:
             st.error(f"Une erreur est survenue lors de l'analyse : {e}")
