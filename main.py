@@ -114,3 +114,35 @@ if st.button("📡 Lancer le Scan Mondial des Crises (Temps Réel)", type="prima
 
         except Exception as e:
             st.error(f"Une erreur est survenue lors de l'analyse : {e}")
+            
+import streamlit as st
+
+# ... (ton code précédent avec l'interface et la barre de recherche) ...
+
+st.divider() # Une belle ligne de séparation
+
+# --- SECTION MONÉTISATION ---
+st.header("💎 Passer à Signal Zero PRO")
+st.markdown("Vous aimez nos analyses ? Ne ratez plus aucune crise avec nos alertes en temps réel.")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.info("""
+    **Offre Analyste - 199€/mois**
+    * ✅ Analyses illimitées sur le tableau de bord
+    * ✅ Alertes Discord/Slack en temps réel (Priorité haute)
+    * ✅ Croisement d'actualités mondiales
+    """)
+    # st.link_button crée un bouton cliquable qui redirige vers une autre page (ton lien Stripe)
+    st.link_button("S'abonner maintenant", "https://buy.stripe.com/bJefZg4LAfTP1NO1RWdwc00", type="primary")
+
+with col2:
+    st.warning("""
+    **Offre Enterprise - Sur Devis**
+    * 🚀 Tout le plan Analyste
+    * 🚀 Suivi personnalisé de votre flotte (jusqu'à 50 navires)
+    * 🚀 Intégration API dans vos outils internes
+    """)
+    # Un lien vers ton email professionnel ou un formulaire Google Form
+    st.link_button("Contacter les ventes", "mailto:contact@tastartup.com")
