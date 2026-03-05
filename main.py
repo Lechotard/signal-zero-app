@@ -310,7 +310,7 @@ if st.session_state.crise_actuelle:
         
         if st.session_state.est_premium:
             pdf_bytes = generer_rapport_pdf(rapport)
-            st.download_button(label="📥 Télécharger PDF", data=pdf_bytes, file_name="Report.pdf", mime="application/pdf", type="primary")
+            st.download_button(label="📥 Download PDF", data=pdf_bytes, file_name="Report.pdf", mime="application/pdf", type="primary")
         else:
             st.warning(tr("🔒 L'export de rapports PDF est une fonctionnalité PRO.", "🔒 PDF report export is a PRO feature.", "🔒 La exportación de informes PDF es una función PRO.", "🔒 PDF 报告导出是 PRO 功能。", "🔒 पीडीएफ रिपोर्ट निर्यात एक PRO सुविधा है।"))
             st.link_button(tr("💎 S'abonner pour débloquer le PDF", "💎 Subscribe to unlock PDF", "💎 Suscríbete para desbloquear PDF", "💎 订阅解锁 PDF", "💎 पीडीएफ अनलॉक करने के लिए सदस्यता लें"), "https://buy.stripe.com/bJefZg4LAfTP1NO1RWdwc00")
@@ -370,4 +370,5 @@ def afficher_cours_bourse(symbole, nom_affichage):
 
 with col_m1: afficher_cours_bourse("CL=F", "🛢️ WTI")
 with col_m2: afficher_cours_bourse("NG=F", "🔥 Natural Gas")
+
 with col_m3: afficher_cours_bourse("ZW=F", "🌾 Wheat")
