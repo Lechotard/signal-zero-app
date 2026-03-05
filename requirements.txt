@@ -1,6 +1,12 @@
 streamlit
 requests
-google-genai
-duckduckgo-search
-pydantic
+beautifulsoup4
 python-dotenv
+google-genai
+pydantic
+duckduckgo-search
+folium
+streamlit-folium
+yfinance
+plotly
+fpdf
