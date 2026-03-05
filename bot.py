@@ -59,7 +59,8 @@ def run_bot():
     )
     rapport = json.loads(resultat.text)
     
-    # 3. L'envoi avec les nouvelles exigences
+    
+# 3. L'envoi avec les nouvelles exigences
     if rapport['crise_nouvelle_detectee'] and len(rapport['noms_navires_confirmes']) > 0:
         navires_str = ", ".join(rapport['noms_navires_confirmes'])
         
@@ -74,7 +75,11 @@ def run_bot():
             requests.post(DISCORD_WEBHOOK, json={"content": message})
             print("✅ Alerte vérifiée envoyée sur Discord !")
     else:
-        print("✅ Scan terminé. Aucune nouvelle crise précise et corroborée n'a été détectée.")
+        # NOUVEAU : LE SIGNAL DE VIE
+        message_calme = "✅ *Scan de routine Signal Zero : Océans calmes, aucune crise majeure détectée ces dernières 24h.*"
+        if DISCORD_WEBHOOK:
+            requests.post(DISCORD_WEBHOOK, json={"content": message_calme})
+        print("✅ Scan terminé. Message de routine envoyé.")
 
 if __name__ == "__main__":
     run_bot()
