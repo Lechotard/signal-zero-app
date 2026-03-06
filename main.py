@@ -187,7 +187,7 @@ components.html("""<script type="text/javascript">width="100%";height="500";name
 st.divider()
 
 # --- RECHERCHE IMO SIMPLE ---
-st.subheader(tr("🎯 Ciblage par Numéro IMO (Gratuit)", "🎯 IMO Number Targeting (Free)", "🎯 Búsqueda por IMO (Gratis)", "🎯 IMO号码定位 (免费)", "🎯 IMO नंबर खोजना (मुफ़्त)"))
+st.subheader(tr("🎯 Ciblage par Numéro IMO", "🎯 IMO Number Targeting", "🎯 Búsqueda por IMO", "🎯 IMO号码定位", "🎯 IMO नंबर खोजना"))
 col_search, col_btn = st.columns([3, 1])
 with col_search: imo_recherche = st.text_input("IMO", placeholder="Ex: 9903413")
 with col_btn: st.write(""); bouton_recherche = st.button(tr("🔍 Extraire", "🔍 Extract", "🔍 Extraer", "🔍 提取", "🔍 निकालें"), use_container_width=True)
@@ -372,3 +372,4 @@ with col_m1: afficher_cours_bourse("CL=F", "🛢️ WTI")
 with col_m2: afficher_cours_bourse("NG=F", "🔥 Natural Gas")
 
 with col_m3: afficher_cours_bourse("ZW=F", "🌾 Wheat")
+
