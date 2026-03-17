@@ -10,3 +10,4 @@ streamlit-folium
 pydantic
 reportlab
 python-dotenv
+plotly
