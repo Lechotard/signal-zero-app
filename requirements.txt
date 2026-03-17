@@ -1,12 +1,11 @@
 streamlit
-requests
+pandas
+yfinance
 beautifulsoup4
-python-dotenv
+requests
 google-genai
-pydantic
 duckduckgo-search
 folium
 streamlit-folium
-yfinance
-plotly
-fpdf
+pydantic
+reportlab
