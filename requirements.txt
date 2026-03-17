@@ -8,6 +8,6 @@ duckduckgo-search
 folium
 streamlit-folium
 pydantic
-reportlab
 python-dotenv
 plotly
+fpdf
