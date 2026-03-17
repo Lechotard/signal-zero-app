@@ -1,5 +1,11 @@
 import streamlit as st
 import os
+import streamlit as st
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass 
 import json
 import requests
 import time
